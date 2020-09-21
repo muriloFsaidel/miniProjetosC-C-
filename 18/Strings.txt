@@ -1,0 +1,59 @@
+em c:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+
+    //Variáveis
+    char palavra[255];
+
+    printf("digite uma palavra");
+
+    //limpa a área de armazenamento da memória entre dispositivos(buffer)
+    //atribuindo valor zero a entrada padrão(standard input)
+    setbuf(stdin, 0);
+
+    //leitura de valores à string
+    //resgatar o valor digitado para inserção
+    //na string palavra de 255 posições com entrada padrão
+    fgets(palavra, 255, stdin);
+
+    //limpa posições não utilizadas
+    //atribuindo \0 a última posição(-1) não ocupada
+    //informando o fim da string inserida
+    palavra[strlen(palavra)-1] = '\0';
+
+    printf("%s", palavra);
+
+}
+
+em c++:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+
+//usando diretamente a biblioteca iostream(std::) para comando cin/out/string
+using namespace std;
+
+int main(){
+
+    //definindo a string
+    string palavra;
+
+    //imprimindo saída(cout) equivale ao printf
+    // << equivale a ""
+    cout << "Digite uma palavra";
+
+    //lendo a string(cin) palavra
+    cin >> palavra;
+
+    // << equivale a "" e concatenação
+    cout << "\nA palavra is:" << palavra;
+
+    system("pause");
+
+    return 0;
+}
